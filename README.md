@@ -13,7 +13,7 @@ To maximize the benefits of the Strapi Blurred Image Format plugin, ensure that 
 To install the plugin, use the following npm command:
 
 ```bash
-npm install @isneezy/strapi-blurred-format
+npm install @isneezy/strapi-blurred-image-format
 ```
 
 > Remember to restart your Strapi server after installation.
@@ -21,7 +21,7 @@ npm install @isneezy/strapi-blurred-format
 # Features
 
 - **Automatic Blurred Format Generation:** Effortlessly generate blurred formats for supported files upon upload.
-- **Easy Integration:** Seamlessly integrate the `@isneezy/strapi-blurred-format` plugin into your existing Strapi CMS setup, ensuring a smooth and hassle-free experience.
+- **Easy Integration:** Seamlessly integrate the `@isneezy/strapi-blurred-image-format` plugin into your existing Strapi CMS setup, ensuring a smooth and hassle-free experience.
 - **Migration on Startup:** The plugin automatically generates missing blurred image formats during startup, ensuring that your media library remains up-to-date with the latest enhancements. This migration feature adds convenience and efficiency to your media management tasks.
 
 ## Supported Formats

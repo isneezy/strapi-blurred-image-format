@@ -17,6 +17,9 @@
     "base64",
     "image"
   ],
+  "repository": {
+    "url": "https://github.com/isneezy/strapi-blurred-image-format.git"
+  },
   "license": "MIT",
   "author": {
     "name": "Ivan Vilanculo"
