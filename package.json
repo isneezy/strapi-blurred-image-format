@@ -18,7 +18,7 @@
     "image"
   ],
   "strapi": {
-    "name": "strapi-blurred-image-format",
+    "name": "Blurred Image Format",
     "description": "Generates a compact blurred representation of image uploads.",
     "kind": "plugin"
   },
