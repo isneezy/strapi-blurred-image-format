@@ -1,0 +1,56 @@
+{
+  "name": "strapi-blured-image-format",
+  "version": "0.0.0",
+  "description": "A strapi plugin that generates a compact blured representation of image uploads.",
+  "strapi": {
+    "name": "strapi-blured-image-format",
+    "description": "Generates a compact blured representation of image uploads.",
+    "kind": "plugin"
+  },
+  "dependencies": {
+    "@strapi/design-system": "^1.6.3",
+    "@strapi/helper-plugin": "^4.6.0",
+    "@strapi/icons": "^1.6.3",
+    "buffer-image-size": "^0.6.4",
+    "got": "^14.0.0",
+    "ky": "^1.2.0",
+    "prop-types": "^15.7.2",
+    "sharp": "^0.33.2",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@strapi/typescript-utils": "^4.6.0",
+    "@types/react": "^17.0.53",
+    "@types/react-dom": "^18.0.28",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.26",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "styled-components": "^5.3.6",
+    "typescript": "5.0.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.1"
+  },
+  "author": {
+    "name": "Ivan Vilanculo"
+  },
+  "maintainers": [
+    {
+      "name": "Ivan Vilanculo"
+    }
+  ],
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "develop": "tsc -p tsconfig.server.json -w",
+    "build": "tsc -p tsconfig.server.json"
+  },
+  "license": "MIT"
+}
