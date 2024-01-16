@@ -7,20 +7,20 @@ const SUPPORTED_MIME_TYPES = FORMATS_TO_RESIZE.map(type => `image/${type}`)
 
 export const isMimeTypeSupported = (mime: string) => SUPPORTED_MIME_TYPES.includes(mime)
 
-export async function generateBluredImage(data: any) {
+export async function generateBlurredImage(data: any) {
     const { mime, name, hash, ext } = data
 
-    data.is_blured = false
-    data.can_be_blured = false
+    data.is_blurred = false
+    data.can_be_blurred = false
 
     if (isMimeTypeSupported(mime)) {
         try {
             const stream = data.getStream()
             const image = await sharp(stream.path).resize({ width: 16, fit: 'inside' }).jpeg({ quality: 75 }).toBuffer();
             const { height, width } = sizeOf(image)
-            data.can_be_blured = true
+            data.can_be_blurred = true
 
-            const bluredImageFormat = {
+            const blurredImageFormat = {
                 name,
                 hash,
                 ext: '.jpg',
@@ -32,13 +32,13 @@ export async function generateBluredImage(data: any) {
                 url: `data:image/pgeg;base64, ${image.toString('base64')}`
             };
 
-            const formats = { ...data.formats, blured: bluredImageFormat }
+            const formats = { ...data.formats, blurred: blurredImageFormat }
             data.formats = formats
-            data.is_blured = true
+            data.is_blurred = true
         } catch (error) {
-            logger.warn(`[blured-image-format] Failed to generate blured format for upload "${name}"`, error)
+            logger.warn(`[blurred-image-format] Failed to generate blurred format for upload "${name}"`, error)
         }
     } else {
-        data.can_be_blured = false
+        data.can_be_blurred = false
     }
 }

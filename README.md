@@ -1,3 +1,3 @@
-# Strapi plugin strapi-blured-image-format
+# Strapi plugin strapi-blurred-image-format
 
-A quick description of strapi-blured-image-format.
+A quick description of strapi-blurred-image-format.
