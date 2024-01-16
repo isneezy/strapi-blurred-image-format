@@ -17,10 +17,28 @@
     "base64",
     "image"
   ],
-  "strapi": {
-    "name": "Blurred Image Format",
-    "description": "Generates a compact blurred representation of image uploads.",
-    "kind": "plugin"
+  "license": "MIT",
+  "author": {
+    "name": "Ivan Vilanculo"
+  },
+  "maintainers": [
+    {
+      "name": "Ivan Vilanculo"
+    }
+  ],
+  "files": [
+    "admin",
+    "dist/server",
+    "custom.d.ts",
+    "package.json",
+    "README.md",
+    "strapi-admin.js",
+    "strapi-server.js",
+    "tsconfig.json"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.server.json",
+    "develop": "tsc -p tsconfig.server.json -w"
   },
   "dependencies": {
     "@strapi/design-system": "^1.6.3",
@@ -32,6 +50,7 @@
     "winston": "^3.11.0"
   },
   "devDependencies": {
+    "@strapi/strapi": "^4.17.1",
     "@strapi/typescript-utils": "^4.6.0",
     "@types/react": "^17.0.53",
     "@types/react-dom": "^18.0.28",
@@ -49,21 +68,13 @@
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1"
   },
-  "author": {
-    "name": "Ivan Vilanculo"
-  },
-  "maintainers": [
-    {
-      "name": "Ivan Vilanculo"
-    }
-  ],
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "scripts": {
-    "develop": "tsc -p tsconfig.server.json -w",
-    "build": "tsc -p tsconfig.server.json"
-  },
-  "license": "MIT"
+  "strapi": {
+    "name": "Blurred Image Format",
+    "description": "Generates a compact blurred representation of image uploads.",
+    "kind": "plugin"
+  }
 }
