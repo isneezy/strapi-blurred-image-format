@@ -12,8 +12,6 @@
     "@strapi/helper-plugin": "^4.6.0",
     "@strapi/icons": "^1.6.3",
     "buffer-image-size": "^0.6.4",
-    "got": "^14.0.0",
-    "ky": "^1.2.0",
     "prop-types": "^15.7.2",
     "sharp": "^0.33.2",
     "winston": "^3.11.0"
