@@ -1,6 +1,6 @@
 {
   "name": "@isneezy/strapi-blurred-image-format",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A strapi plugin that generates a compact blurred representation of image uploads.",
   "keywords": [
     "strapi",
