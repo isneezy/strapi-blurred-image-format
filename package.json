@@ -49,11 +49,9 @@
     "@strapi/icons": "^1.6.3",
     "buffer-image-size": "^0.6.4",
     "prop-types": "^15.7.2",
-    "sharp": "^0.33.2",
     "winston": "^3.11.0"
   },
   "devDependencies": {
-    "@strapi/strapi": "^4.17.1",
     "@strapi/typescript-utils": "^4.6.0",
     "@types/react": "^17.0.53",
     "@types/react-dom": "^18.0.28",
@@ -66,9 +64,11 @@
     "typescript": "5.0.4"
   },
   "peerDependencies": {
+    "@strapi/strapi": "^4.17.1",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-router-dom": "^5.2.0",
+    "sharp": "^0.33.2",
     "styled-components": "^5.2.1"
   },
   "engines": {
@@ -82,5 +82,10 @@
     "name": "Blurred Image Format",
     "description": "Generates a compact blurred representation of image uploads.",
     "kind": "plugin"
+  },
+  "peerDependenciesMeta": {
+    "sharp": {
+      "optional": true
+    }
   }
 }
