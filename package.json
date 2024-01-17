@@ -52,6 +52,7 @@
     "winston": "^3.11.0"
   },
   "devDependencies": {
+    "@strapi/strapi": "^4",
     "@strapi/typescript-utils": "^4.6.0",
     "@types/react": "^17.0.53",
     "@types/react-dom": "^18.0.28",
@@ -64,7 +65,7 @@
     "typescript": "5.0.4"
   },
   "peerDependencies": {
-    "@strapi/strapi": "^4.17.1",
+    "@strapi/strapi": "^4",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-router-dom": "^5.2.0",

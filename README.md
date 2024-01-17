@@ -8,7 +8,7 @@ The Strapi Blurred Image Format plugin enhances your Strapi CMS media management
 
 Upon installing the plugin in your Strapi installation, the API response objects of images take the following structure:
 
-```json
+```json5
 {
   "id": 153,
   "attributes": {
