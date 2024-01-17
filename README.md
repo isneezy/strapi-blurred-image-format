@@ -2,7 +2,34 @@
 
 ## Overview
 
-The Strapi Blurred Image Format plugin enhances your Strapi CMS media management experience by automatically generating base64 blurred formats of your image uploads. Elevate the visual appeal and user experience of your application/web pages by replacing bland grey boxes with aesthetically pleasing blurred image states. This versatile plugin supports various image formats, making it a valuable addition to your Strapi setup.
+The Strapi Blurred Image Format plugin enhances your Strapi CMS media management experience by automatically generating base64 blurred formats for your image uploads. Elevate the visual appeal and user experience of your application/web pages by replacing bland grey boxes with aesthetically pleasing blurred image states. This versatile plugin supports various image formats, making it a valuable addition to your Strapi setup.
+
+## Sample Response
+
+Upon installing the plugin in your Strapi installation, the API response objects of images take the following structure:
+
+```json
+{
+  "id": 153,
+  "attributes": {
+    // other attributes...
+    "formats": {
+      // other image formats such as small, medium, and large...
+      "blurred": {
+        "name": "lorem-ipsum.jpeg",
+        "hash": "lorem-ipsum_8f733286e3",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "path": null,
+        "width": 16,
+        "height": 12,
+        "size": 0.59,
+        "url": "data:image/jpeg;base64, /9j/4QC8RXhpZgAASUkqAAgAAAAGABIBAwABAAAAAQAAABoBBQABAAAAVgAAABsBBQABAAAAXgAAACgBAwABAAAAAgAAABMCAwABAAAAAQAAAGmHBAABAAAAZgAAAAAAAABIAAAAAQAAAEgAAAABAAAABgAAkAcABAAAADAyMTABkQcABAAAAAECAwAAoAcABAAAADAxMDABoAMAAQAAAP//AAACoAQAAQAAABAAAAADoAQAAQAAAAwAAAAAAAAA/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgADAAQAwEiAAIRAQMRAf/EABcAAAMBAAAAAAAAAAAAAAAAAAEDBAX/xAAjEAABBAEDBAAAAAAAAAAAAREhMUH/2gAMAwEAAhEDEQA/ANWw5E3Wd6WtRCXHDEaS422RE6ykBWB1HP3+aJ5I3O1uGmhOPQizMfQhQDIJU2VpSFAg9sgnt8Y1bY7ErXd12FiZU4OvyHFrQlxIScnuPHOPekxuPatm/gyhNsVrjvtrQlbqSMhQOPHOPeqEU2rAn//Z"
+      }
+    }
+  }
+}
+```
 
 ## Requirements
 
