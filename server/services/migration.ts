@@ -1,20 +1,6 @@
 import logger from "../logger"
-import path from 'node:path'
-import fs from 'node:fs'
 
 const MODEL_UUID = 'plugin::upload.file'
-
-async function ensureGetStream(data: any) {
-    const { url } = data
-    if (data.provider !== 'local') {
-        const filePath = path.join(strapi.dirs.static.public, data.url)
-        data.getStream = () => fs.createReadStream(filePath)
-    } else if (url.startsWith('http')) {
-        const res = await fetch(url, {})
-        const stream = (await res.blob()).stream()
-        data.getStream = () => stream
-    }
-}
 
 export async function migrate() {
     try {
@@ -44,7 +30,6 @@ export async function migrate() {
             try {
                 const uploadService = strapi.plugin('upload').service('upload')
                 const { generateBlurredImage } = strapi.service('plugin::blurred-image-format.image-manipulation')
-                await ensureGetStream(data)
                 await generateBlurredImage(data)
                 await uploadService.update(data.id, data)
             } catch (error) {
