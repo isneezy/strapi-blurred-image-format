@@ -18,31 +18,27 @@ export async function generateBlurredImage(data: any) {
     data.can_be_blurred = false
 
     if (isMimeTypeSupported(mime)) {
-        try {
-            ensureGetStream(data)
-            const orginalImageBuffer = await streamToBuffer(data.getStream())
-            const bluredImageBuffer = await sharp(orginalImageBuffer).resize({ width: 16, fit: 'inside' }).jpeg({ quality: 75 }).toBuffer();
-            const { height, width } = sizeOf(bluredImageBuffer)
-            data.can_be_blurred = true
+        await ensureGetStream(data)
+        const orginalImageBuffer = await streamToBuffer(data.getStream())
+        const bluredImageBuffer = await sharp(orginalImageBuffer).resize({ width: 16, fit: 'inside' }).jpeg({ quality: 75 }).toBuffer();
+        const { height, width } = sizeOf(bluredImageBuffer)
+        data.can_be_blurred = true
 
-            const blurredImageFormat = {
-                name,
-                hash,
-                ext: '.jpg',
-                mime: 'image/jpeg',
-                path: null,
-                width,
-                height,
-                size: Number.parseFloat((Buffer.byteLength(bluredImageBuffer) / 1000).toFixed(2)),
-                url: `data:image/jpg;base64, ${bluredImageBuffer.toString('base64')}`
-            };
+        const blurredImageFormat = {
+            name,
+            hash,
+            ext: '.jpg',
+            mime: 'image/jpeg',
+            path: null,
+            width,
+            height,
+            size: Number.parseFloat((Buffer.byteLength(bluredImageBuffer) / 1000).toFixed(2)),
+            url: `data:image/jpg;base64, ${bluredImageBuffer.toString('base64')}`
+        };
 
-            const formats = { ...data.formats, blurred: blurredImageFormat }
-            data.formats = formats
-            data.is_blurred = true
-        } catch (error) {
-            logger.warn(`[blurred-image-format] Failed to generate blurred format for upload "${name}"`, error)
-        }
+        const formats = { ...data.formats, blurred: blurredImageFormat }
+        data.formats = formats
+        data.is_blurred = true
     } else {
         data.can_be_blurred = false
     }

@@ -1,3 +1,5 @@
+import logger from './logger'
+
 export default async () => {
   const { migrate } = strapi.service('plugin::blurred-image-format.migration')
   migrate()
@@ -5,8 +7,13 @@ export default async () => {
   strapi.db?.lifecycles.subscribe({
     async beforeCreate(event) {
       if (event.model.singularName !== 'file') return
+      const { name } = event.params.data
       const { generateBlurredImage } = strapi.service('plugin::blurred-image-format.image-manipulation')
-      await generateBlurredImage(event.params.data)
+      try {
+        await generateBlurredImage(event.params.data)
+      } catch (error) {
+        logger.warn(`[blurred-image-format] Failed to generate blurred format for upload ${name}`, error)
+      }
     }
   })
 };
