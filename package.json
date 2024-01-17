@@ -80,7 +80,8 @@
     "access": "public"
   },
   "strapi": {
-    "name": "Blurred Image Format",
+    "name": "blured-image-format",
+    "displayName": "Blured Image Format",
     "description": "Generates a compact blurred representation of image uploads.",
     "kind": "plugin"
   },
